@@ -308,6 +308,17 @@ export const widgets = [
           },
         ],
       },
+      {
+        handle: 'setNextPageBlock',
+        displayName: 'Block next page',
+        params: [
+          {
+            handle: 'page',
+            displayName: 'Block condition: ',
+            defaultValue: '{{true}}',
+          },
+        ],
+      },
     ],
     definition: {
       others: {

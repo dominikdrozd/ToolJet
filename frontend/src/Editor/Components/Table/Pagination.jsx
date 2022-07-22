@@ -5,6 +5,7 @@ export const Pagination = function Pagination({
   serverSide,
   autoGotoPage,
   autoCanNextPage,
+  blockNextPage,
   autoPageCount,
   autoPageOptions,
   lastActivePageIndex,
@@ -71,9 +72,9 @@ export const Pagination = function Pagination({
         )}
       </small>
       <button
-        className={`btn btn-light btn-sm ${!autoCanNextPage && !serverSide ? 'cursor-not-allowed' : ''}`}
+        className={`btn btn-light btn-sm ${(blockNextPage || (!autoCanNextPage && !serverSide)) ? 'cursor-not-allowed' : ''}`}
         onClick={() => goToNextPage()}
-        disabled={!autoCanNextPage && !serverSide}
+        disabled={blockNextPage || (!autoCanNextPage && !serverSide)}
       >
         {'>'}
       </button>{' '}
